@@ -1,6 +1,7 @@
 # This repository is a copy of the official Marlin 2.0.8, with Tronxy X5SA (and variants) pre-configured.
 
-## On the V6 board there is a W25Qxx SPI FLASH and a 24C16 I2C EEPROMThe Marlin/src/gcode/control/M993_M994.cpp update to
+## On the V6 board there is a W25Qxx SPI FLASH and a 24C16 I2C EEPROM
+The Marlin/src/gcode/control/M993_M994.cpp update to  
 M993   : Backup SPI Flash to SD spiflash.bin file  
 M993 I : Backup I2C 24C16 to SD 24c16.bin file  
 M994   : Restore SPI Flash from SD spiflash.bin file  
