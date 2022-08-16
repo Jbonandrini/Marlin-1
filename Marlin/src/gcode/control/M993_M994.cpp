@@ -26,8 +26,8 @@
 
 #include "../gcode.h"
 #include "../../sd/cardreader.h"
-#include "../../libs/W25Qxx.h"
-#include "../../libs/BL24CXX.h"
+#include "../../libs/W25Qxx.h"    // SPI FLASH
+#include "../../libs/BL24CXX.h"   // I2C EEPROM
 //#include "../shared/eeprom_if.h"
 
 /**
@@ -37,10 +37,10 @@ void GcodeSuite::M993() {
   if (parser.seen('I')) {
     if (MOTHERBOARD == BOARD_CHITU3D_V6) {
       if (!card.isMounted()) card.mount();
-      char f_name[] = "24c16.bin";
+      char f_name[] = "24c16.bin";    // I2C EEPROM
       card.openFileWrite(f_name);
       if (!card.isFileOpen()) {
-        SERIAL_ECHOLNPAIR("Failed to open ", f_name, " to write. ");
+        SERIAL_ECHOLNPAIR("Failed to open ", f_name, " to write.");
         return;
       }
       SERIAL_ECHOPGM("Save I2C 24C16");
